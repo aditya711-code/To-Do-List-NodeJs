@@ -1,0 +1,354 @@
+body
+{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+/*Main Div*/
+.todo
+{
+    display: flex;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 32px;
+    flex-wrap: wrap;
+    background: transparent;
+
+}
+
+/* Header*/
+.todo-header
+{
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    font-size: 40px;
+    font-family: sans-serif;
+    margin: 0;
+    color: black;
+    background-color: #C8AD7F;
+    border-radius: 10px;
+}
+
+.todo-header h1
+{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(63, 63, 28);
+
+}
+
+/*Form to collect the data*/
+.form
+{
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    height: inherit;
+}
+
+/* The task to be added to the tasklist*/
+.describe
+{
+
+    margin-top: 25px;
+    border: 1px solid black;
+    background-color: beige;
+
+
+}
+
+/*P tag for the description*/
+.describe p
+{
+    display: block;
+    float: left;
+    font-size: 20px;
+    text-decoration: underline;
+
+}
+/* Input box which collects the data*/
+.describe input
+{
+
+    border: none;
+    outline: none;
+    padding: 11px;
+    width: 100%;
+    font-size: 15px;
+    background: transparent;
+}
+
+.describe input[type="text"]:focus
+{
+    background: transparent;
+    border: none;
+    outline-width: 0;
+}
+
+.desc
+{
+    background-color: white;
+}
+
+/*Category and Due date*/
+.about
+{
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+
+
+}
+
+.about .category p
+{
+    font-size: 18px;
+    width: 100%;
+}
+
+.about .category select
+{
+    margin-top: -5px;
+    font-size: 15px;
+}
+
+.category
+{
+    width: 60%;
+    float: left;
+    background-color: beige;
+}
+
+.category select
+{
+
+    outline: none;
+    border: none;
+    background-color: #C8AD7F;
+
+
+}
+
+.category p
+{
+    font-size: 20px;
+}
+
+.date
+{
+    width: 40%;
+    float: right;
+    border-left: 1px solid black;
+    background-color: beige
+}
+
+.date input
+{
+    background-color: #C8AD7F;
+    border: none;
+    outline: none;
+}
+/* Add Button*/
+button[type=submit]
+{
+    width: 100%;
+    height: inherit;
+    font-size: 16px;
+    background-color:#eff4c4;;
+    color: black;
+    padding: 4px 0px;
+    border: outset 2px;
+    box-shadow: 0px 2px 2px grey;
+    border-radius: 12px;
+}
+/* Delete button*/
+button[type='delete']
+{
+    width: 100%;
+    height: inherit;
+    font-size: 16px;
+    background-color: #eff4c4;
+    color: black;
+    padding: 4px 0px;
+    border: outset 2px;
+    box-shadow: 0px 2px 2px grey;
+    border-radius: 12px;
+
+}
+/* TASK LIST*/
+#tasklist-header
+{
+    width: 100%;
+    height: 10%;
+    color: white;
+    background-color: #C8AD7F;;
+    margin-top: -14px;
+    border-radius: 17px;
+
+}
+
+#tasklist-header i
+{
+    margin-right: 20px;
+}
+
+#tasklist-header h1
+{
+    color: rgb(63, 63, 28);
+    font-size: 25px;
+}
+
+/* List with the task added to the database*/
+#list
+{
+    width: 100%;
+    position: absolute;
+    padding: 10px 5px;
+    margin-top: 0;
+    background-color: beige;
+    border: 1px solid black;
+    border-radius: 12px;
+
+}
+
+#list li
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    position: relative;
+
+}
+
+/*checkbox*/
+.check_list
+{
+    text-decoration: line-through;
+    background-color: #7ee87e;
+    font-size: 15px;
+    box-shadow: 0px 2px 2px grey;
+    border: outset 2px;
+
+}
+
+.check_list:hover
+{
+    text-decoration: line-through;
+    background-color: #7ee87e;
+    font-size: 15px;
+    box-shadow: 0px 2px 2px grey;
+    border: outset 2px;
+
+}
+
+
+.overlay
+{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #7ee87e;
+    color: black;
+    font-family: sans-serif;
+    transition: visibility 10s, opacity 10s linear;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 2px 2px 15px #ccccbd;;
+
+}
+
+.hidden
+{
+    display: none;
+}
+
+
+ul li:hover
+{
+    border: outset 2px;
+    background-color: #C8AD7F;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.task-name
+{
+    display: block;
+    margin-bottom: 10px;
+    max-width: fit-content;
+    font-size: 15px;
+
+}
+
+#task-desc
+{
+    display: block;
+    margin-bottom: 10px;
+    width: 151px;
+    max-width: 151px;
+    font-size: 15px;
+}
+
+.task-name #task-date i
+{
+    color: grey;
+    margin-right: 4px;
+    font-size: 15px;
+
+}
+
+#task-category
+{
+    width: 50px;
+    font-size: 15px;
+}
+
+input #task1.custom_checkbox:checked
+{
+    text-decoration: line-through;
+}
+
+#task1:checked
+{
+    text-decoration: line-through;
+}
+
+input[type='checkbox']:checked + li
+{
+    text-decoration: line-through;
+    background-color: green;
+    color: black;
+
+}
+
+.delete-btn, .task-category
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+hr
+{
+    border-top: 1px solid black;
+}
